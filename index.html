@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Comparison</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: #fff4e1;
+      font-family: Arial, sans-serif;
+      color: #75462f;
+    }
+
+    .container {
+      max-width: 1050px;
+      margin: 0 auto;
+      padding: 40px 24px;
+    }
+
+    .video-row {
+      display: grid;
+      grid-template-columns: 160px 1fr 1fr;
+      gap: 24px;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+
+    .row-label {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    .video-item {
+      min-width: 0;
+      text-align: center;
+    }
+
+    video {
+      display: block;
+      width: 100%;
+      aspect-ratio: 9 / 12;
+      object-fit: contain;
+      background: #e8dfd0;
+      border-radius: 3px;
+    }
+
+    .video-name {
+      margin-top: 10px;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    @media (max-width: 650px) {
+      .container { padding: 24px 12px; }
+      .video-row {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin-bottom: 32px;
+      }
+      .row-label {
+        grid-column: 1 / -1;
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <section class="video-row">
+      <div class="row-label">Lead Video</div>
+      <div class="video-item">
+        <video controls playsinline preload="metadata">
+          <source src="L1.MP4" type="video/mp4">
+        </video>
+        <div class="video-name">L1</div>
+      </div>
+      <div class="video-item">
+        <video controls playsinline preload="metadata">
+          <source src="L2.MP4" type="video/mp4">
+        </video>
+        <div class="video-name">L2</div>
+      </div>
+    </section>
+
+    <section class="video-row">
+      <div class="row-label">User-generated video</div>
+      <div class="video-item">
+        <video controls playsinline preload="metadata">
+          <source src="U1.MP4" type="video/mp4">
+        </video>
+        <div class="video-name">U1</div>
+      </div>
+      <div class="video-item">
+        <video controls playsinline preload="metadata">
+          <source src="U2.MP4" type="video/mp4">
+        </video>
+        <div class="video-name">U2</div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
